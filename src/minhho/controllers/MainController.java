@@ -1,10 +1,14 @@
 package minhho.controllers;
 
+import minhho.views.MainMenu;
+
+import java.util.Scanner;
+
 import static java.lang.System.exit;
 
 public class MainController {
 
-    public static void run(int choice) {
+    private static void toChoiceOption(int choice) {
 
         switch (choice) {
             case 1:
@@ -41,6 +45,35 @@ public class MainController {
                 exit(1);
             default:
                 System.out.println("again");
+        }
+    }
+
+    public static void run() {
+        while(true) {
+
+            boolean isContinue = true;
+
+            MainMenu.printMenu();
+            int choice = MainMenu.makeChoice();
+            MainMenu.printChoice(choice);
+
+            toChoiceOption(choice);
+
+            while (isContinue) {
+                System.out.print("Do you want to continue using apps? (Y/N): ");
+                Scanner sc = new Scanner(System.in);
+                String ans = sc.next();
+
+                if (ans.equalsIgnoreCase("Y") || ans.equalsIgnoreCase("Yes")) {
+                    isContinue = false;
+                } else if (ans.equalsIgnoreCase("N") || ans.equalsIgnoreCase("No")) {
+                    isContinue = false;
+                    exit(1);
+                } else {
+                    System.out.println("Invalid choice, please try again!");
+                    
+                }
+            }
         }
     }
 
