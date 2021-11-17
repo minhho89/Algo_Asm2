@@ -1,4 +1,4 @@
-package minhho.view;
+package minhho.views;
 
 import java.util.Scanner;
 

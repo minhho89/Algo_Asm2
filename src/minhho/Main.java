@@ -1,6 +1,6 @@
 package minhho;
 
-import minhho.view.MainMenu;
+import minhho.views.MainMenu;
 
 public class Main {
 
