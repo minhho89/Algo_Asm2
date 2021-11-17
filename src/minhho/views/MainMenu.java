@@ -15,7 +15,7 @@ public class MainMenu {
         System.out.println("5. Search by ID");
         System.out.println("6. Delete by ID");
         System.out.println("7. Sort by ID.");
-        System.out.println("8. Convert to Binary ");
+        System.out.println("8. Convert to Binary of the first item in LinkedList");
         System.out.println("9. Load to stack and display");
         System.out.println("10. Load to queue and display.");
         System.out.println("Exit:\n" +
