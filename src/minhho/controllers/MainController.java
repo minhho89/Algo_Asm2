@@ -37,7 +37,7 @@ public class MainController {
                 searchById();
                 break;
             case 6:
-                System.out.println("Delete by ID");
+                deleteById();
                 break;
             case 7:
                 System.out.println("Sort by ID");
@@ -58,11 +58,29 @@ public class MainController {
         }
     }
 
+    private static void deleteById() {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Please input an product ID to delete: ");
+        String key = sc.nextLine();
+
+        Product p = linkedList.linearSearch(key);
+        if (p == null) {
+            System.out.println("Not found");
+        } else {
+            System.out.println("Product found. About to delete... ");
+            linkedList.deleteProduct(key);
+            System.out.println("Product " + p.getCode() + " has been deleted.");
+        }
+
+    }
+
     private static void searchById() {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Please input an product ID to search: ");
+        System.out.print("Please input an product ID to search: ");
         String key = sc.nextLine();
 
         Product p = linkedList.linearSearch(key);

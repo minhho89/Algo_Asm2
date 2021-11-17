@@ -84,8 +84,35 @@ public class ProductLinkedList {
         length++;
     }
 
+    public void deleteProduct(String code) {
+        Node<Product> temp = head;
+        Node<Product> prev = null;
+
+        // If code belongs to head node
+        if (temp != null && temp.getInfo().getCode().equalsIgnoreCase(code)) {
+            head = temp.next; // change head
+            head.prev = null;
+        }
+
+        // Else, search for the code to delete
+        while (temp != null && !temp.getInfo().getCode().equalsIgnoreCase(code)) {
+            prev = temp;
+            temp = temp.next;
+        }
+
+        // If code was not present in the list
+        if (temp == null) {
+            return;
+        }
+
+        // Unlink the node from list
+        prev.next = temp.next;
+
+
+    }
+
     public Product linearSearch(String code) {
-        ProductSearch search = new ProductSearch(this);
+        new ProductSearch(this); // Initialize ProductSearch
         return ProductSearch.linearSearch(code);
     }
 
