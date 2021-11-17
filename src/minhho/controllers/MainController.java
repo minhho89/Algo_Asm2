@@ -3,6 +3,7 @@ package minhho.controllers;
 import minhho.io.ProductIO;
 import minhho.models.Product;
 import minhho.utils.ProductLinkedList;
+import minhho.utils.Utils;
 import minhho.views.MainMenu;
 
 import java.util.Scanner;
@@ -43,7 +44,7 @@ public class MainController {
                 sortById();
                 break;
             case 8:
-                System.out.println("Covert to Binary");
+                convertToBinary();
                 break;
             case 9:
                 System.out.println("Load to stack and display");
@@ -56,6 +57,13 @@ public class MainController {
             default:
                 System.out.println("again");
         }
+    }
+
+    private static void convertToBinary() {
+
+        int number = linkedList.getHead().getInfo().getQty();
+        System.out.println("Quantity of first element product in list is " + number +
+                " >> to Binary: " + Utils.toBinary(number));
     }
 
     private static void sortById() {
