@@ -4,7 +4,7 @@ import static java.lang.System.exit;
 
 public class MainController {
 
-    public static void toFeature(int choice) {
+    public static void run(int choice) {
 
         switch (choice) {
             case 1:
