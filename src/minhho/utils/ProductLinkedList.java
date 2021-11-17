@@ -4,8 +4,33 @@ import minhho.models.Product;
 
 public class ProductLinkedList {
 
-    Node<Product> head;
-    Node<Product> tail;
+    private Node<Product> head;
+    private Node<Product> tail;
+    private int length = 0;
+
+    public Node<Product> getHead() {
+        return head;
+    }
+
+    public void setHead(Node<Product> head) {
+        this.head = head;
+    }
+
+    public Node<Product> getTail() {
+        return tail;
+    }
+
+    public void setTail(Node<Product> tail) {
+        this.tail = tail;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
 
     /**
      * Adding a node at the front of the list
@@ -23,6 +48,8 @@ public class ProductLinkedList {
         }
 
         head = newNode;
+
+        length++;
     }
 
     /**
@@ -39,6 +66,8 @@ public class ProductLinkedList {
         if (head == null) {
             newNode.prev = null;
             head = newNode;
+            length++;
+
             return;
         }
 
@@ -52,6 +81,7 @@ public class ProductLinkedList {
         last.next = newNode;
         newNode.prev = last;
 
+        length++;
     }
 
     public void printList() {

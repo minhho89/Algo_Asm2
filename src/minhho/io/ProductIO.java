@@ -1,11 +1,13 @@
 package minhho.io;
 
 import minhho.models.Product;
+import minhho.utils.Node;
 import minhho.utils.ProductLinkedList;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class ProductIO {
@@ -27,6 +29,48 @@ public class ProductIO {
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void saveToFile(String file, String delimiter, ProductLinkedList linkedList) {
+        System.out.println("About to save...");
+        PrintWriter printWriter = null;
+        int counter = 0;
+
+        try {
+            printWriter = new PrintWriter(file);
+
+            Node<Product> currentNode = linkedList.getHead();
+            // Traverse till last node
+            while (currentNode != null) {
+                counter++;
+
+                Product p = currentNode.getInfo();
+                String code = p.getCode();
+                String name = p.getName();
+                double price = p.getUnitPrice();
+                int qty = p.getQty();
+
+                // If current node is not the first node,
+                // then add line break for next record
+                if (counter > 1) {
+                    printWriter.println();
+                }
+
+                printWriter.print(code + delimiter);
+                printWriter.print(name + delimiter);
+                printWriter.print(qty + delimiter);
+                printWriter.print(price + delimiter);
+
+                currentNode = currentNode.getNext();
+            }
+            System.out.println("File saved.");
+        } catch (FileNotFoundException e) {
+            System.out.println("File save error");
+            e.printStackTrace();
+        } finally {
+
+            printWriter.close();
         }
     }
 }

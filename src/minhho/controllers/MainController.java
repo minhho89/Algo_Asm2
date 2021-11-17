@@ -17,6 +17,8 @@ public class MainController {
 
         switch (choice) {
             case 1:
+                // Clear the list first, then add data from file to list
+                linkedList = new ProductLinkedList();
                 ProductIO.readFromFile("data.txt", "\\r\\n|,,,", linkedList);
                 linkedList.printList();
                 break;
@@ -24,14 +26,13 @@ public class MainController {
                 System.out.println("Input & add to the end");
                 Product newProduct = inputNewProduct();
                 linkedList.append(newProduct);
-                // TODO: delete this debug line
-                linkedList.printList();
                 break;
             case 3:
+                linkedList.printList();
                 System.out.println("Display data");
                 break;
             case 4:
-                System.out.println("Save product");
+                ProductIO.saveToFile("data.txt", ",,,", linkedList);
                 break;
             case 5:
                 System.out.println("Search by ID");
