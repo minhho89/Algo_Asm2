@@ -41,6 +41,8 @@ public class ProductIO {
             printWriter = new PrintWriter(file);
 
             Node<Product> currentNode = linkedList.getHead();
+            System.out.println("Saving... ");
+
             // Traverse till last node
             while (currentNode != null) {
                 counter++;
@@ -61,6 +63,8 @@ public class ProductIO {
                 printWriter.print(name + delimiter);
                 printWriter.print(qty + delimiter);
                 printWriter.print(price + delimiter);
+
+                System.out.println("Saving product: " + code + "; " + name + "; " + qty + "; " + price + "...");
 
                 currentNode = currentNode.getNext();
             }
