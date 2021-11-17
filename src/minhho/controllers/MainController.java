@@ -1,5 +1,6 @@
 package minhho.controllers;
 
+import minhho.io.ProductIO;
 import minhho.views.MainMenu;
 
 import java.util.Scanner;
@@ -13,6 +14,7 @@ public class MainController {
         switch (choice) {
             case 1:
                 System.out.println("Load data from file and display");
+                ProductIO.readFromFile("data.txt", ",,,");
                 break;
             case 2:
                 System.out.println("Input & add to the end");
