@@ -11,13 +11,14 @@ import static java.lang.System.exit;
 
 public class MainController {
 
-    static ProductLinkedList linkedList = new ProductLinkedList();
+    private static ProductLinkedList linkedList = new ProductLinkedList();
 
     private static void toChoiceOption(int choice) {
 
         switch (choice) {
             case 1:
-                ProductIO.readFromFile("data.txt", ",,,");
+                ProductIO.readFromFile("data.txt", ",,,|\\r\\n", linkedList);
+                linkedList.printList();
                 break;
             case 2:
                 System.out.println("Input & add to the end");
