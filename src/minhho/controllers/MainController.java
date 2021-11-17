@@ -41,9 +41,7 @@ public class MainController {
                 exit(1);
             default:
                 System.out.println("again");
-
         }
-
     }
 
 }
