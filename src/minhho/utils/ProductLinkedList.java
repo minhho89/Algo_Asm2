@@ -108,7 +108,6 @@ public class ProductLinkedList {
         // Unlink the node from list
         prev.next = temp.next;
 
-
     }
 
     public Product linearSearch(String code) {
@@ -116,6 +115,9 @@ public class ProductLinkedList {
         return ProductSearch.linearSearch(code);
     }
 
+    public void sortById() {
+        ProductSort.sortById(this);
+    }
 
     public void printList() {
         Node<Product> currentNode = head;

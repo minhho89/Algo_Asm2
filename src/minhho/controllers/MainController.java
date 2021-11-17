@@ -40,7 +40,7 @@ public class MainController {
                 deleteById();
                 break;
             case 7:
-                System.out.println("Sort by ID");
+                sortById();
                 break;
             case 8:
                 System.out.println("Covert to Binary");
@@ -56,6 +56,15 @@ public class MainController {
             default:
                 System.out.println("again");
         }
+    }
+
+    private static void sortById() {
+
+        System.out.println("Sorting...");
+        linkedList.sortById();
+        System.out.println("Sorted list:");
+        linkedList.printList();
+
     }
 
     private static void deleteById() {
