@@ -11,6 +11,8 @@ import static java.lang.System.exit;
 
 public class MainController {
 
+    static ProductLinkedList linkedList = new ProductLinkedList();
+
     private static void toChoiceOption(int choice) {
 
         switch (choice) {
@@ -20,7 +22,6 @@ public class MainController {
             case 2:
                 System.out.println("Input & add to the end");
                 Product newProduct = inputNewProduct();
-                ProductLinkedList linkedList = new ProductLinkedList();
                 linkedList.append(newProduct);
                 // TODO: delete this debug line
                 linkedList.printList();
