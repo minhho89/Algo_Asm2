@@ -1,6 +1,8 @@
-package minhho.utils;
+package minhho.utils.simpleAlgos;
 
 import minhho.models.Product;
+import minhho.utils.linkedList.Node;
+import minhho.utils.linkedList.ProductLinkedList;
 
 public class ProductSearch {
 

@@ -2,8 +2,9 @@ package minhho.controllers;
 
 import minhho.io.ProductIO;
 import minhho.models.Product;
-import minhho.utils.ProductLinkedList;
+import minhho.utils.linkedList.ProductLinkedList;
 import minhho.utils.Utils;
+import minhho.utils.stack.ProductStack;
 import minhho.views.MainMenu;
 
 import java.util.Scanner;
@@ -47,7 +48,7 @@ public class MainController {
                 convertToBinary();
                 break;
             case 9:
-                System.out.println("Load to stack and display");
+                loadToStackAndDisplay();
                 break;
             case 10:
                 System.out.println("Load to queue and display");
@@ -57,6 +58,14 @@ public class MainController {
             default:
                 System.out.println("again");
         }
+    }
+
+    private static void loadToStackAndDisplay() {
+        ProductStack stack = new ProductStack();
+        Utils.pushToStack(linkedList, stack);
+        System.out.println();
+        System.out.println("Display Stack:");
+        stack.printStack();
     }
 
     private static void convertToBinary() {

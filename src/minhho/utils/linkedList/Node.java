@@ -1,4 +1,4 @@
-package minhho.utils;
+package minhho.utils.linkedList;
 
 public class Node<T> {
     T info;

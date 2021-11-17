@@ -1,12 +1,11 @@
 package minhho.io;
 
 import minhho.models.Product;
-import minhho.utils.Node;
-import minhho.utils.ProductLinkedList;
+import minhho.utils.linkedList.Node;
+import minhho.utils.linkedList.ProductLinkedList;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
