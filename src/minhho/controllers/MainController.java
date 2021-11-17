@@ -1,6 +1,8 @@
 package minhho.controllers;
 
 import minhho.io.ProductIO;
+import minhho.models.Product;
+import minhho.utils.ProductLinkedList;
 import minhho.views.MainMenu;
 
 import java.util.Scanner;
@@ -13,11 +15,15 @@ public class MainController {
 
         switch (choice) {
             case 1:
-                System.out.println("Load data from file and display");
                 ProductIO.readFromFile("data.txt", ",,,");
                 break;
             case 2:
                 System.out.println("Input & add to the end");
+                Product newProduct = inputNewProduct();
+                ProductLinkedList linkedList = new ProductLinkedList();
+                linkedList.append(newProduct);
+                // TODO: delete this debug line
+                linkedList.printList();
                 break;
             case 3:
                 System.out.println("Display data");
@@ -77,6 +83,31 @@ public class MainController {
                 }
             }
         }
+    }
+
+    // TODO: add validate
+    private static Product inputNewProduct() {
+
+        Product newProduct = new Product();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Please input new product's information: ");
+
+        System.out.print("Product code: ");
+        newProduct.setCode(sc.nextLine());
+
+        System.out.print("Product name: ");
+        newProduct.setName(sc.nextLine());
+
+        System.out.print("Product price: ");
+        newProduct.setUnitPrice(sc.nextDouble());
+
+        System.out.print("Product quantity: ");
+        newProduct.setQty(sc.nextInt());
+
+        return newProduct;
+
+
     }
 
 }
