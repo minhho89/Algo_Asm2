@@ -17,8 +17,7 @@ public class Node<T> {
 
     @Override
     public String toString() {
-        return "Node{" +
-                "info=" + info;
+        return info.toString();
 
     }
 

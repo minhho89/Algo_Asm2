@@ -17,7 +17,7 @@ public class MainController {
 
         switch (choice) {
             case 1:
-                ProductIO.readFromFile("data.txt", ",,,|\\r\\n", linkedList);
+                ProductIO.readFromFile("data.txt", "\\r\\n|,,,", linkedList);
                 linkedList.printList();
                 break;
             case 2:
