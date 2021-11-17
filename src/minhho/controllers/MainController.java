@@ -23,7 +23,6 @@ public class MainController {
                 linkedList.printList();
                 break;
             case 2:
-                System.out.println("Input & add to the end");
                 Product newProduct = inputNewProduct();
                 linkedList.append(newProduct);
                 break;
@@ -35,7 +34,7 @@ public class MainController {
                 ProductIO.saveToFile("data.txt", ",,,", linkedList);
                 break;
             case 5:
-                System.out.println("Search by ID");
+                searchById();
                 break;
             case 6:
                 System.out.println("Delete by ID");
@@ -57,6 +56,24 @@ public class MainController {
             default:
                 System.out.println("again");
         }
+    }
+
+    private static void searchById() {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Please input an product ID to search: ");
+        String key = sc.nextLine();
+
+        Product p = linkedList.linearSearch(key);
+        if (p == null) {
+            System.out.println("Not found");
+        } else {
+            System.out.print("Product found: ");
+            System.out.println(p);
+        }
+
+
     }
 
     public static void run() {
@@ -109,7 +126,6 @@ public class MainController {
         newProduct.setQty(sc.nextInt());
 
         return newProduct;
-
 
     }
 

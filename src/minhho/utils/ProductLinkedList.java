@@ -84,6 +84,12 @@ public class ProductLinkedList {
         length++;
     }
 
+    public Product linearSearch(String code) {
+        ProductSearch search = new ProductSearch(this);
+        return ProductSearch.linearSearch(code);
+    }
+
+
     public void printList() {
         Node<Product> currentNode = head;
         while (currentNode != null) {
