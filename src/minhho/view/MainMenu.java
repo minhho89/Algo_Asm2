@@ -40,7 +40,7 @@ public class MainMenu {
         System.out.println("Your choice is: " + choice);
     }
 
-    public static boolean isValid(String choice) {
+    private static boolean isValid(String choice) {
         try {
             Integer.parseInt(choice);
             return true;
