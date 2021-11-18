@@ -98,10 +98,20 @@ public class ProductLinkedList {
     }
 
     public void sortById() {
-
-//        ProductSort.selectionSortById(this);
+        ProductSort.recurSelectionSortById(this, head, getLastNode());
     }
 
+
+    public Node<Product> getNodeByProduct(Product p) {
+        Node<Product> node = head;
+        while (node != null) {
+            if (node.getInfo().equals(p)) {
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }
 
     public Node<Product> getLastNode() {
         Node<Product> node = head;

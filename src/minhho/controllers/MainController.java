@@ -63,7 +63,6 @@ public class MainController {
 
     private static void displayData() {
         linkedList.printList();
-        System.out.println("Display data");
     }
 
     private static void inputAndAddToTheEnd() {

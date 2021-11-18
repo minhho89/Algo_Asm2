@@ -29,9 +29,43 @@ public class ProductSort {
 
     }
 
-    public static void recurSelectionSortById(ProductLinkedList linkedList) {
+    public static void recurSelectionSortById(ProductLinkedList linkedList, Node<Product> startNode, Node<Product> endNode) {
+
+        // Return when starting and end is the same
+        if (startNode.equals(endNode)) {
+            return;
+        }
+
+        // Get min Product
+        Product minProduct = minProductByCode(linkedList, startNode, endNode.getPrev());
+        String minCode = minProduct.getCode();
+        String startCode = startNode.getInfo().getCode();
+
+        // Swapping when 'minCode' is smaller than 'startCode'
+        if (minCode.compareToIgnoreCase(startCode) < 1) {
+            Node<Product> minNode = linkedList.getNodeByProduct(minProduct);
+            swapProducts(minNode, startNode);
+        }
+
+        // Shift startNode to right to use for below method
+        startNode = startNode.getNext();
+
+        // Recursively calling selection
+        recurSelectionSortById(linkedList, startNode, endNode);
 
     }
+
+    /**
+     * Swap products between noodes
+     * @param minNode
+     * @param startNode
+     */
+    private static void swapProducts(Node<Product> minNode, Node<Product> startNode) {
+        Product temp = startNode.getInfo();
+        startNode.setInfo(minNode.getInfo());
+        minNode.setInfo(temp);
+    }
+
 
     // TODO: set to private
     public static Product minProductByCode(ProductLinkedList linkedList,Node<Product> start, Node<Product> end) {

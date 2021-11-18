@@ -12,15 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        MainController.run();
-
-        // TODO: test
-        ProductLinkedList linkedList = MainController.loadDataToLinkedList();
-        linkedList.printList();
-
-        System.out.println("Min product by code");
-        Product min = ProductSort.minProductByCode(linkedList, linkedList.getHead(), linkedList.getLastNode());
-        System.out.println(min);
+        MainController.run();
 
 
     }
