@@ -71,16 +71,18 @@ public class MainController {
         linkedList.append(newProduct);
     }
 
-    private static void loadDataFromFileToLinkedListAndDisplay() {
-        loadDataToLinkedList();
+    // TODO: set to private
+    public static void loadDataFromFileToLinkedListAndDisplay() {
+        linkedList = loadDataToLinkedList();
         linkedList.printList();
     }
 
-    private static void loadDataToLinkedList() {
-        // First, clear the list, then add data from file to list
-        linkedList = new ProductLinkedList();
+    // TODO: set to private
+    public static ProductLinkedList loadDataToLinkedList() {
+        ProductLinkedList productLinkedList = new ProductLinkedList();
         ProductIO<ProductLinkedList> io = new ProductIO<>();
-        io.readFromFile("data.txt", "\\r\\n|,,,", linkedList);
+        io.readFromFile("data.txt", "\\r\\n|,,,", productLinkedList);
+        return productLinkedList;
     }
 
     private static void loadToQueueAndDisplay() {

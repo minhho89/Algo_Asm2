@@ -7,31 +7,11 @@ import minhho.utils.simpleAlgos.ProductSort;
 public class ProductLinkedList {
 
     private Node<Product> head;
-    private Node<Product> tail;
+
     private int length = 0;
 
     public Node<Product> getHead() {
         return head;
-    }
-
-    public void setHead(Node<Product> head) {
-        this.head = head;
-    }
-
-    public Node<Product> getTail() {
-        return tail;
-    }
-
-    public void setTail(Node<Product> tail) {
-        this.tail = tail;
-    }
-
-    public int getLength() {
-        return length;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
     }
 
     /**
@@ -118,7 +98,17 @@ public class ProductLinkedList {
     }
 
     public void sortById() {
-        ProductSort.sortById(this);
+
+//        ProductSort.selectionSortById(this);
+    }
+
+
+    public Node<Product> getLastNode() {
+        Node<Product> node = head;
+        while(node.next != null) {
+            node = node.next;
+        }
+        return node;
     }
 
     public void printList() {

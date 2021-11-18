@@ -6,7 +6,7 @@ import minhho.utils.linkedList.ProductLinkedList;
 
 public class ProductSort {
 
-    public static void sortById(ProductLinkedList linkedList) {
+    public static void bubbleSortById(ProductLinkedList linkedList) {
         Node<Product> outerNode = linkedList.getHead();
 
         while(outerNode != null) {
@@ -28,5 +28,29 @@ public class ProductSort {
         }
 
     }
+
+    public static void recurSelectionSortById(ProductLinkedList linkedList) {
+
+    }
+
+    // TODO: set to private
+    public static Product minProductByCode(ProductLinkedList linkedList,Node<Product> start, Node<Product> end) {
+        Product minProduct = start.getInfo();
+        Node<Product> n = start;
+
+        while (n != null) {
+            String code = n.getInfo().getCode();
+
+            if (code.compareToIgnoreCase(minProduct.getCode()) < 0) {
+                minProduct = n.getInfo();
+            }
+            n = n.getNext();
+        }
+
+        return minProduct;
+
+    }
+
+
 
 }
