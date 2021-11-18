@@ -2,6 +2,7 @@ package minhho.controllers;
 
 import minhho.io.ProductIO;
 import minhho.models.Product;
+import minhho.utils.ProductValidation;
 import minhho.utils.linkedList.ProductLinkedList;
 import minhho.utils.Utils;
 import minhho.utils.queue.ProductQueue;
