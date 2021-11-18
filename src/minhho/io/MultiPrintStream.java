@@ -4,15 +4,16 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 
+/**
+ * Redirects output to file also
+ */
 public class MultiPrintStream extends PrintStream {
     public MultiPrintStream(String fileName) throws FileNotFoundException {
         super(fileName);
         try
         {
             FileOutputStream fout= new FileOutputStream(fileName);
-
             MultiOutputStream multiOut= new MultiOutputStream(System.out, fout);
-
             PrintStream stdout= new PrintStream(multiOut);
 
             System.setOut(stdout);
@@ -21,6 +22,5 @@ public class MultiPrintStream extends PrintStream {
         {
             System.out.println("Error writing to file");
         }
-
     }
 }

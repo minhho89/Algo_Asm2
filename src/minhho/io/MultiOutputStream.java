@@ -3,6 +3,11 @@ package minhho.io;
 import java.io.IOException;
 import java.io.OutputStream;
 
+/**
+ * Creates multiple outputStream:
+ * - One for outputting to the console
+ * - One for outputting to file
+ */
 public class MultiOutputStream extends OutputStream {
     OutputStream[] outputStreams;
 

@@ -8,7 +8,19 @@ import minhho.utils.queue.ProductQueue;
 import java.io.*;
 import java.util.Scanner;
 
+/**
+ * Helps read and write to/from file
+ * @param <T> Generics form for ProductLinkedList or ProductQueue
+ */
 public class ProductIO<T> {
+
+    /**
+     * Read product data from file to a certain product collection
+     * (ProductLinkedList or ProductQueue)
+     * @param file text file hold the products details
+     * @param delimiter
+     * @param collection ProductLinkedList or ProductQueue instance
+     */
     public void readFromFile(String file, String delimiter, T collection){
         Scanner sc = null;
         try {
@@ -35,6 +47,13 @@ public class ProductIO<T> {
         }
     }
 
+    /**
+     * Save products' details to file from a linkedlist.
+     * We traverse till last node, at each node we write product details to file with delimiters
+     * @param file file that holds the product details
+     * @param delimiter delimiter between product details' fields
+     * @param linkedList ProductLinkedList that holds products
+     */
     public static void saveToFile(String file, String delimiter, ProductLinkedList linkedList) {
         System.out.println("About to save...");
         PrintWriter printWriter = null;
@@ -62,6 +81,7 @@ public class ProductIO<T> {
                     printWriter.println();
                 }
 
+                // Writing product details to file with delimiter
                 printWriter.print(code + delimiter);
                 printWriter.print(name + delimiter);
                 printWriter.print(qty + delimiter);
@@ -69,6 +89,7 @@ public class ProductIO<T> {
 
                 System.out.println("Saving product: " + code + "; " + name + "; " + qty + "; " + price + "...");
 
+                // Shift to the next node
                 currentNode = currentNode.getNext();
             }
             System.out.println("File saved.");
@@ -76,7 +97,6 @@ public class ProductIO<T> {
             System.out.println("File save error");
             e.printStackTrace();
         } finally {
-
             printWriter.close();
         }
     }
