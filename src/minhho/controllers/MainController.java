@@ -4,6 +4,7 @@ import minhho.io.ProductIO;
 import minhho.models.Product;
 import minhho.utils.linkedList.ProductLinkedList;
 import minhho.utils.Utils;
+import minhho.utils.queue.ProductQueue;
 import minhho.utils.stack.ProductStack;
 import minhho.views.MainMenu;
 
@@ -19,14 +20,10 @@ public class MainController {
 
         switch (choice) {
             case 1:
-                // Clear the list first, then add data from file to list
-                linkedList = new ProductLinkedList();
-                ProductIO.readFromFile("data.txt", "\\r\\n|,,,", linkedList);
-                linkedList.printList();
+                loadDataFromFileToLinkedListAndDisplay();
                 break;
             case 2:
-                Product newProduct = inputNewProduct();
-                linkedList.append(newProduct);
+                inputAndAddToTheEnd();
                 break;
             case 3:
                 linkedList.printList();
@@ -51,13 +48,40 @@ public class MainController {
                 loadToStackAndDisplay();
                 break;
             case 10:
-                System.out.println("Load to queue and display");
+                loadToQueueAndDisplay();
                 break;
             case 0:
                 exit(1);
             default:
                 System.out.println("again");
         }
+    }
+
+    private static void inputAndAddToTheEnd() {
+        Product newProduct = inputNewProduct();
+        linkedList.append(newProduct);
+    }
+
+    private static void loadDataFromFileToLinkedListAndDisplay() {
+        // First, clear the list, then add data from file to list
+        linkedList = new ProductLinkedList();
+        ProductIO<ProductLinkedList> io = new ProductIO<>();
+        io.readFromFile("data.txt", "\\r\\n|,,,", linkedList);
+        linkedList.printList();
+    }
+
+    private static void loadToQueueAndDisplay() {
+
+        ProductQueue queue = new ProductQueue(1000);
+        ProductIO<ProductQueue> io = new ProductIO<>();
+
+        System.out.println("About to add products to queue...");
+        io.readFromFile("data.txt","\\r\\n|,,,", queue);
+        System.out.println("Enqueue done.");
+
+        System.out.println();
+        System.out.println("Queue elements:");
+        queue.printQueue();
     }
 
     private static void loadToStackAndDisplay() {

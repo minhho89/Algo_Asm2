@@ -3,14 +3,15 @@ package minhho.io;
 import minhho.models.Product;
 import minhho.utils.linkedList.Node;
 import minhho.utils.linkedList.ProductLinkedList;
+import minhho.utils.queue.ProductQueue;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class ProductIO {
-    public static void readFromFile(String file, String delimiter, ProductLinkedList linkedList){
+public class ProductIO<T> {
+    public void readFromFile(String file, String delimiter, T collection){
         Scanner sc = null;
         try {
             sc = new Scanner(new File(file));
@@ -24,7 +25,12 @@ public class ProductIO {
 
                 // Add to Product linklist
                 Product p = new Product(code, name, price, qty);
-                linkedList.append(p);
+                if (collection instanceof ProductLinkedList) {
+                    ((ProductLinkedList)collection).append(p);
+                } else if (collection instanceof ProductQueue) {
+                    ((ProductQueue)collection).enqueue(p);
+                }
+
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
