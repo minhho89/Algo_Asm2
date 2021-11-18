@@ -5,9 +5,7 @@ import minhho.utils.linkedList.Node;
 import minhho.utils.linkedList.ProductLinkedList;
 import minhho.utils.queue.ProductQueue;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Scanner;
 
 public class ProductIO<T> {
@@ -82,4 +80,5 @@ public class ProductIO<T> {
             printWriter.close();
         }
     }
+
 }
