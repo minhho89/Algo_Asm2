@@ -201,11 +201,20 @@ public class MainController {
 
         System.out.println("Please input new product's information: ");
 
-        System.out.print("Product code: ");
-        newProduct.setCode(sc.nextLine());
+        while(true) {
+            System.out.print("Product code (no space in code): ");
+            String code = sc.nextLine();
+            if(ProductValidation.isCodeValid(code)) {
+                newProduct.setCode(code);
+                break;
+            } else {
+                System.out.println("Invalid value. Please try again");
+            }
+        }
 
         System.out.print("Product name: ");
         newProduct.setName(sc.nextLine());
+
 
         System.out.print("Product price: ");
         newProduct.setUnitPrice(sc.nextDouble());

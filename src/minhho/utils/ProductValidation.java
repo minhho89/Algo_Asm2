@@ -9,7 +9,16 @@ public class ProductValidation {
      * @return true if valid, false if not
      */
     public static boolean isCodeValid(String code) {
-        return code.matches("\\s+");
+        int length = code.length();
+        char[] charArray = code.toCharArray();
+
+        // Check if is there any white space or not
+        for (int i = 0; i < length; i++) {
+            if (Character.isWhitespace(charArray[i]))
+                return false;
+        }
+        return true;
+
     }
 
 }
