@@ -15,7 +15,6 @@ import static java.lang.System.exit;
 
 public class MainController {
 
-    private static final String CONSOLE_OUTPUT = "console_output.txt";
     private static ProductLinkedList linkedList = new ProductLinkedList();
 
     private static void toChoiceOption(int choice) {
@@ -163,7 +162,7 @@ public class MainController {
 
         System.out.println("App initializing...");
         System.out.println("Adding data to list...");
-        loadDataToLinkedList();
+        linkedList = loadDataToLinkedList();
         System.out.println("Done initializing");
         System.out.println();
 
