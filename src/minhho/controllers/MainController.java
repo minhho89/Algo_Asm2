@@ -26,11 +26,10 @@ public class MainController {
                 inputAndAddToTheEnd();
                 break;
             case 3:
-                linkedList.printList();
-                System.out.println("Display data");
+                displayData();
                 break;
             case 4:
-                ProductIO.saveToFile("data.txt", ",,,", linkedList);
+                saveListToFile();
                 break;
             case 5:
                 searchById();
@@ -57,17 +56,30 @@ public class MainController {
         }
     }
 
+    private static void saveListToFile() {
+        ProductIO.saveToFile("data.txt", ",,,", linkedList);
+    }
+
+    private static void displayData() {
+        linkedList.printList();
+        System.out.println("Display data");
+    }
+
     private static void inputAndAddToTheEnd() {
         Product newProduct = inputNewProduct();
         linkedList.append(newProduct);
     }
 
     private static void loadDataFromFileToLinkedListAndDisplay() {
+        loadDataToLinkedList();
+        linkedList.printList();
+    }
+
+    private static void loadDataToLinkedList() {
         // First, clear the list, then add data from file to list
         linkedList = new ProductLinkedList();
         ProductIO<ProductLinkedList> io = new ProductIO<>();
         io.readFromFile("data.txt", "\\r\\n|,,,", linkedList);
-        linkedList.printList();
     }
 
     private static void loadToQueueAndDisplay() {
@@ -145,6 +157,13 @@ public class MainController {
     }
 
     public static void run() {
+
+        System.out.println("App initializing...");
+        System.out.println("Adding data to list...");
+        loadDataToLinkedList();
+        System.out.println("Done initializing");
+        System.out.println();
+
         while(true) {
 
             boolean isContinue = true;
