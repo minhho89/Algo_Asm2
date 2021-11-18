@@ -56,19 +56,17 @@ public class ProductSort {
     }
 
     /**
-     * Swap products between noodes
-     * @param minNode
-     * @param startNode
+     * Swap products between nodes
+     * @param nodeX
+     * @param nodeY
      */
-    private static void swapProducts(Node<Product> minNode, Node<Product> startNode) {
-        Product temp = startNode.getInfo();
-        startNode.setInfo(minNode.getInfo());
-        minNode.setInfo(temp);
+    private static void swapProducts(Node<Product> nodeX, Node<Product> nodeY) {
+        Product temp = nodeY.getInfo();
+        nodeY.setInfo(nodeX.getInfo());
+        nodeX.setInfo(temp);
     }
 
-
-    // TODO: set to private
-    public static Product minProductByCode(ProductLinkedList linkedList,Node<Product> start, Node<Product> end) {
+    private static Product minProductByCode(ProductLinkedList linkedList,Node<Product> start, Node<Product> end) {
         Product minProduct = start.getInfo();
         Node<Product> n = start;
 
@@ -82,9 +80,7 @@ public class ProductSort {
         }
 
         return minProduct;
-
     }
-
 
 
 }
