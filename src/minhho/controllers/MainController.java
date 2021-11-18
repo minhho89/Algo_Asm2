@@ -13,12 +13,56 @@ import java.util.Scanner;
 
 import static java.lang.System.exit;
 
+/**
+ * Control the app's main flow. Including input to select features and call the right handle method.
+ */
 public class MainController {
 
     private static ProductLinkedList linkedList = new ProductLinkedList();
 
-    private static void toChoiceOption(int choice) {
+    /**
+     * The entry point of the class, handle all app's operation
+     */
+    public static void run() {
+        System.out.println("App initializing...");
+        System.out.println("Adding data to list...");
+        linkedList = loadDataToLinkedList();
+        System.out.println("Done initializing");
+        System.out.println();
 
+        while(true) {
+
+            boolean isContinue = true;
+
+            MainMenu.printMenu();
+            int choice = MainMenu.makeChoice();
+            MainMenu.printChoice(choice);
+
+            toChoiceOption(choice);
+
+            while (isContinue) {
+                System.out.print("Do you want to continue using apps? (Y/N): ");
+                Scanner sc = new Scanner(System.in);
+                String ans = sc.next();
+
+                if (ans.equalsIgnoreCase("Y") || ans.equalsIgnoreCase("Yes")) {
+                    isContinue = false;
+                } else if (ans.equalsIgnoreCase("N") || ans.equalsIgnoreCase("No")) {
+                    isContinue = false;
+                    exit(1);
+                } else {
+                    System.out.println("Invalid choice, please try again!");
+
+                }
+            }
+        }
+    }
+
+    /**
+     * Calls the right method when user input a feature option
+     * @param choice feature option number
+     */
+    private static void toChoiceOption(int choice) {
         switch (choice) {
             case 1:
                 loadDataFromFileToLinkedListAndDisplay();
@@ -57,36 +101,54 @@ public class MainController {
         }
     }
 
+    /**
+     * Save LinkedList products to data.txt file.
+     * Using encapsulated method from ProductIO
+     */
     private static void saveListToFile() {
         ProductIO.saveToFile("data.txt", ",,,", linkedList);
     }
 
+    /**
+     * Print all products in LinkedList to the console
+     */
     private static void displayData() {
         linkedList.printList();
     }
 
+    /**
+     * Input new Product and append to the end of the LinkedList as a new node
+     */
     private static void inputAndAddToTheEnd() {
         Product newProduct = inputNewProduct();
         linkedList.append(newProduct);
     }
 
-    // TODO: set to private
-    public static void loadDataFromFileToLinkedListAndDisplay() {
+    /**
+     * Helps the app to load product data from file, then append to the LinkedList and display to the console
+     */
+    private static void loadDataFromFileToLinkedListAndDisplay() {
         linkedList = loadDataToLinkedList();
         linkedList.printList();
     }
 
-    // TODO: set to private
-    public static ProductLinkedList loadDataToLinkedList() {
+    /**
+     * Helps load product data from file to linkedList
+     * @return data loaded linkedlist
+     */
+    private static ProductLinkedList loadDataToLinkedList() {
         ProductLinkedList productLinkedList = new ProductLinkedList();
         ProductIO<ProductLinkedList> io = new ProductIO<>();
         io.readFromFile("data.txt", "\\r\\n|,,,", productLinkedList);
         return productLinkedList;
     }
 
+    /**
+     * Load product data from LinkedList to a queue then display them to the console
+     */
     private static void loadToQueueAndDisplay() {
 
-        ProductQueue queue = new ProductQueue(1000);
+        ProductQueue queue = new ProductQueue(1000); // set Capacity to the queue as 1000
         ProductIO<ProductQueue> io = new ProductIO<>();
 
         System.out.println("About to add products to queue...");
@@ -98,6 +160,9 @@ public class MainController {
         queue.printQueue();
     }
 
+    /**
+     * Load product data from the linkedlist and then push them to the stack, then print to the console
+     */
     private static void loadToStackAndDisplay() {
         ProductStack stack = new ProductStack();
         Utils.pushToStack(linkedList, stack);
@@ -106,15 +171,19 @@ public class MainController {
         stack.printStack();
     }
 
+    /**
+     * Convert number of the first product quality to binary form
+     */
     private static void convertToBinary() {
-
         int number = linkedList.getHead().getInfo().getQty();
         System.out.println("Quantity of first element product in list is " + number +
                 " >> to Binary: " + Utils.toBinary(number));
     }
 
+    /**
+     * Sort the whole Linkedlist by products' id/code, then print to the console
+     */
     private static void sortById() {
-
         System.out.println("Sorting...");
         linkedList.sortById();
         System.out.println("Sorted list:");
@@ -122,8 +191,10 @@ public class MainController {
 
     }
 
+    /**
+     * Delete a single node by the product id
+     */
     private static void deleteById() {
-
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Please input an product ID to delete: ");
@@ -140,8 +211,10 @@ public class MainController {
 
     }
 
+    /**
+     * Search a node by a product ID, then display the product details to the console
+     */
     private static void searchById() {
-
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Please input an product ID to search: ");
@@ -155,45 +228,13 @@ public class MainController {
             System.out.println(p);
         }
 
-
     }
 
-    public static void run() {
-
-        System.out.println("App initializing...");
-        System.out.println("Adding data to list...");
-        linkedList = loadDataToLinkedList();
-        System.out.println("Done initializing");
-        System.out.println();
-
-        while(true) {
-
-            boolean isContinue = true;
-
-            MainMenu.printMenu();
-            int choice = MainMenu.makeChoice();
-            MainMenu.printChoice(choice);
-
-            toChoiceOption(choice);
-
-            while (isContinue) {
-                System.out.print("Do you want to continue using apps? (Y/N): ");
-                Scanner sc = new Scanner(System.in);
-                String ans = sc.next();
-
-                if (ans.equalsIgnoreCase("Y") || ans.equalsIgnoreCase("Yes")) {
-                    isContinue = false;
-                } else if (ans.equalsIgnoreCase("N") || ans.equalsIgnoreCase("No")) {
-                    isContinue = false;
-                    exit(1);
-                } else {
-                    System.out.println("Invalid choice, please try again!");
-
-                }
-            }
-        }
-    }
-
+    /**
+     * Helps input a new product by create a new product instance,
+     * then let users input the product's detail.
+     * @return new product with details
+     */
     private static Product inputNewProduct() {
 
         Product newProduct = new Product();
@@ -239,5 +280,4 @@ public class MainController {
         }
         return newProduct;
     }
-
 }
