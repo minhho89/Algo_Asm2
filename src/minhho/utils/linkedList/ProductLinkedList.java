@@ -4,6 +4,9 @@ import minhho.models.Product;
 import minhho.utils.simpleAlgos.ProductSearch;
 import minhho.utils.simpleAlgos.ProductSort;
 
+/**
+ * LinkedList that designed to hold Product instances
+ */
 public class ProductLinkedList {
 
     private Node<Product> head;
@@ -66,11 +69,15 @@ public class ProductLinkedList {
         length++;
     }
 
+    /**
+     * Delete a product by product code/id
+     * @param code
+     */
     public void deleteProduct(String code) {
         Node<Product> temp = head;
         Node<Product> prev = null;
 
-        // If code belongs to head node
+        // If code belongs to head node, set the next node to head
         if (temp != null && temp.getInfo().getCode().equalsIgnoreCase(code)) {
             head = temp.next; // change head
             head.prev = null;
@@ -92,16 +99,28 @@ public class ProductLinkedList {
 
     }
 
+    /**
+     * Search a product by code using linear search algorithms
+     * @param code
+     * @return product if found, if not return null
+     */
     public Product linearSearch(String code) {
         new ProductSearch(this); // Initialize ProductSearch
         return ProductSearch.linearSearch(code);
     }
 
+    /**
+     * Sort the LinkedList by product id
+     */
     public void sortById() {
         ProductSort.recurSelectionSortById(this, head, getLastNode());
     }
 
-
+    /**
+     * Search a node by a particular product
+     * @param p product
+     * @return product if found, if not return null
+     */
     public Node<Product> getNodeByProduct(Product p) {
         Node<Product> node = head;
         while (node != null) {
@@ -113,6 +132,9 @@ public class ProductLinkedList {
         return null;
     }
 
+    /**
+     * @return the last node of the LinkedList
+     */
     public Node<Product> getLastNode() {
         Node<Product> node = head;
         while(node.next != null) {
@@ -121,6 +143,9 @@ public class ProductLinkedList {
         return node;
     }
 
+    /**
+     * Print the entire list
+     */
     public void printList() {
         Node<Product> currentNode = head;
         while (currentNode != null) {

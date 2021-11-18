@@ -1,13 +1,13 @@
 package minhho.utils.linkedList;
 
+/**
+ * A node for LinkedList
+ * @param <T> Generics form for data that node holds
+ */
 public class Node<T> {
     T info;
     Node prev;
     Node next;
-
-
-    public Node() {
-    }
 
     public Node(T info) {
         this.info = info;
@@ -27,25 +27,14 @@ public class Node<T> {
         return prev;
     }
 
-    public void setPrev(Node prev) {
-        this.prev = prev;
-    }
-
     public Node getNext() {
         return next;
     }
-
-    public void setNext(Node next) {
-        this.next = next;
-    }
-
-
 
     @Override
     public String toString() {
         return info.toString();
 
     }
-
 
 }
