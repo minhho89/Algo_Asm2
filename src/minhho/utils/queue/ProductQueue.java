@@ -2,6 +2,9 @@ package minhho.utils.queue;
 
 import minhho.models.Product;
 
+/**
+ * Custom Queue for Product instances
+ */
 public class ProductQueue {
 
     private int front;
@@ -23,21 +26,19 @@ public class ProductQueue {
         return (this.size == this.capacity);
     }
 
-    // Queue is empty when size is 0
-    boolean isEmpty()
-    {
-        return (this.size == 0);
-    }
-
+    /**
+     * Adding a new product to last position of queue
+     * @param product
+     */
     public void enqueue(Product product) {
         if (isFull()) {
             System.out.println("Queue is full");
             return;
         }
-        this.rear = (this.rear + 1)
-                % this.capacity;
+        this.rear = (this.rear + 1) % this.capacity;
 
         System.out.println("Adding " + product.getCode() + " to queue...");
+
         this.products[this.rear] = product;
         this.size = this.size + 1;
     }
