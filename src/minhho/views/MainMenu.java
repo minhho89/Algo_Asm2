@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 public class MainMenu {
 
+    /**
+     * Print main menu with options
+     */
     public static void printMenu() {
-
         System.out.println("Choose one of this options: ");
         System.out.println("Product list: ");
         System.out.println("1. Load data from file and display");
@@ -23,6 +25,10 @@ public class MainMenu {
         System.out.println("Please input your choice (0 - 10): ");
     }
 
+    /**
+     * Handle user input for choosing option
+     * @return option value
+     */
     public static int makeChoice() {
         Scanner sc = new Scanner(System.in);
         String choice = sc.next();
@@ -33,13 +39,21 @@ public class MainMenu {
             System.out.println("Invalid input");
             return -1;
         }
-
     }
 
+    /**
+     * Print user's option input
+     * @param choice
+     */
     public static void printChoice(int choice) {
         System.out.println("Your choice is: " + choice);
     }
 
+    /**
+     * Check if user input is valid or not
+     * @param choice
+     * @return true if valid, false if not
+     */
     private static boolean isValid(String choice) {
         try {
             Integer.parseInt(choice);
@@ -48,6 +62,5 @@ public class MainMenu {
             return false;
         }
     }
-
 }
 

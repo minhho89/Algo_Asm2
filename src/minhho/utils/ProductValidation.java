@@ -1,5 +1,8 @@
 package minhho.utils;
 
+/**
+ * Helps to validate users' input value
+ */
 public class ProductValidation {
 
     /**
@@ -20,6 +23,11 @@ public class ProductValidation {
         return true;
     }
 
+    /**
+     * Price has to be a double
+     * @param price
+     * @return true if valid, otherwise return false
+     */
     public static boolean isPriceValid(String price) {
         try {
             Double.parseDouble(price);
@@ -29,6 +37,11 @@ public class ProductValidation {
         }
     }
 
+    /**
+     * Quantity has to be an int
+     * @param qty
+     * @return true if valid, otherwise return false
+     */
     public static boolean isQuantityValid(String qty) {
         try {
             Integer.parseInt(qty);
