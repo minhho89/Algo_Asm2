@@ -18,7 +18,24 @@ public class ProductValidation {
                 return false;
         }
         return true;
+    }
 
+    public static boolean isPriceValid(String price) {
+        try {
+            Double.parseDouble(price);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public static boolean isQuantityValid(String qty) {
+        try {
+            Integer.parseInt(qty);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 }

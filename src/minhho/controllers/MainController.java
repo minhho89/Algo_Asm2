@@ -215,15 +215,29 @@ public class MainController {
         System.out.print("Product name: ");
         newProduct.setName(sc.nextLine());
 
+        while(true) {
+            System.out.print("Product price: ");
+            String priceStr = sc.nextLine();
+            if (ProductValidation.isPriceValid(priceStr)) {
+                newProduct.setUnitPrice(Double.valueOf(priceStr));
+                break;
+            } else {
+                System.out.println("Invalid value. Please try again");
+            }
+        }
 
-        System.out.print("Product price: ");
-        newProduct.setUnitPrice(sc.nextDouble());
+        while(true) {
+            System.out.print("Product quantity: ");
+            String qtyStr = sc.nextLine();
 
-        System.out.print("Product quantity: ");
-        newProduct.setQty(sc.nextInt());
-
+            if (ProductValidation.isQuantityValid(qtyStr)) {
+                newProduct.setQty(Integer.valueOf(qtyStr));
+                break;
+            } else {
+                System.out.println("Invalid value. Please try again");
+            }
+        }
         return newProduct;
-
     }
 
 }
