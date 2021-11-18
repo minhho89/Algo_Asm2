@@ -193,7 +193,6 @@ public class MainController {
         }
     }
 
-    // TODO: add validate
     private static Product inputNewProduct() {
 
         Product newProduct = new Product();
