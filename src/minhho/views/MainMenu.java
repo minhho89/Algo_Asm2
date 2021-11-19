@@ -2,27 +2,31 @@ package minhho.views;
 
 import java.util.Scanner;
 
+import static minhho.utils.ConsoleTextColor.*;
+
 public class MainMenu {
 
     /**
      * Print main menu with options
      */
     public static void printMenu() {
-        System.out.println("Choose one of this options: ");
-        System.out.println("Product list: ");
-        System.out.println("1. Load data from file and display");
-        System.out.println("2. Input & add to the end.");
-        System.out.println("3. Display data");
-        System.out.println("4. Save product list to file.");
-        System.out.println("5. Search by ID");
-        System.out.println("6. Delete by ID");
-        System.out.println("7. Sort by ID.");
-        System.out.println("8. Convert to Binary of the first item in LinkedList");
-        System.out.println("9. Load to stack and display");
-        System.out.println("10. Load to queue and display.");
-        System.out.println("Exit:\n" +
+        System.out.println(ANSI_YELLOW + "Choose one of this options: ");
+        System.out.println(ANSI_YELLOW + "Product list: ");
+        System.out.println("-----------------------------------------------");
+        System.out.println(ANSI_RESET + "1. Load data from file and display");
+        System.out.println(ANSI_RESET + "2. Input & add to the end.");
+        System.out.println(ANSI_RESET +  "3. Display data");
+        System.out.println(ANSI_RESET +  "4. Save product list to file.");
+        System.out.println(ANSI_RESET +  "5. Search by ID");
+        System.out.println(ANSI_RESET +  "6. Delete by ID");
+        System.out.println(ANSI_RESET +  "7. Sort by ID.");
+        System.out.println(ANSI_RESET +  "8. Convert to Binary of the first item in LinkedList");
+        System.out.println(ANSI_RESET +  "9. Load to stack and display");
+        System.out.println(ANSI_RESET +  "10. Load to queue and display.");
+        System.out.println(ANSI_RESET +  "Exit:\n" +
                 "0. Exit");
-        System.out.println("Please input your choice (0 - 10): ");
+        System.out.println("-----------------------------------------------");
+        System.out.println(ANSI_YELLOW + "Please input your choice (0 - 10): ");
     }
 
     /**
@@ -46,7 +50,7 @@ public class MainMenu {
      * @param choice
      */
     public static void printChoice(int choice) {
-        System.out.println("Your choice is: " + choice);
+        System.out.println(ANSI_RESET + "Your choice is: " + choice);
     }
 
     /**

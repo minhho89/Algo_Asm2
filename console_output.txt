@@ -1,27 +1,340 @@
-App initializing...
-Adding data to list...
-Done initializing
+[32mApp initializing...
+[32mAdding data to list...
+[32mDone initializing
 
-Choose one of this options: 
-Product list: 
-1. Load data from file and display
-2. Input & add to the end.
-3. Display data
-4. Save product list to file.
-5. Search by ID
-6. Delete by ID
-7. Sort by ID.
-8. Convert to Binary of the first item in LinkedList
-9. Load to stack and display
-10. Load to queue and display.
-Exit:
+[33mChoose one of this options: 
+[33mProduct list: 
+-----------------------------------------------
+[0m1. Load data from file and display
+[0m2. Input & add to the end.
+[0m3. Display data
+[0m4. Save product list to file.
+[0m5. Search by ID
+[0m6. Delete by ID
+[0m7. Sort by ID.
+[0m8. Convert to Binary of the first item in LinkedList
+[0m9. Load to stack and display
+[0m10. Load to queue and display.
+[0mExit:
 0. Exit
-Please input your choice (0 - 10): 
-Your choice is: 3
-P06 | Clips | 2.3 | 30
-P03 | Phones | 30.0 | 20
-A01 | Bikes | 23.4 | 20
-P02 | Headphone | 12.0 | 32
-P04 | Mouses | 32.3 | 10
-P01 | Milk | 1.3 | 30
-Do you want to continue using apps? (Y/N): 
+-----------------------------------------------
+[33mPlease input your choice (0 - 10): 
+[0mYour choice is: 10
+About to add products to queue...
+Adding P06 to queue...
+Adding P03 to queue...
+Adding A01 to queue...
+Adding P02 to queue...
+Adding P04 to queue...
+Adding P01 to queue...
+Adding P32 to queue...
+Enqueue done.
+
+Queue elements:
+[0m-----------------------------------------------------
+ID           Title           Price        Quantity 
+-----------------------------------------------------
+P06           Clips        2.300000              30
+P03          Phones       30.000000              20
+A01           Bikes       23.400000              20
+P02       Headphone       12.000000              32
+P04          Mouses       32.300000              10
+P01            Milk        1.300000              30
+P32           Cofee        0.400000              32
+-----------------------------------------------------
+[0mDo you want to continue using apps? (Y/N): 
+[33mChoose one of this options: 
+[33mProduct list: 
+-----------------------------------------------
+[0m1. Load data from file and display
+[0m2. Input & add to the end.
+[0m3. Display data
+[0m4. Save product list to file.
+[0m5. Search by ID
+[0m6. Delete by ID
+[0m7. Sort by ID.
+[0m8. Convert to Binary of the first item in LinkedList
+[0m9. Load to stack and display
+[0m10. Load to queue and display.
+[0mExit:
+0. Exit
+-----------------------------------------------
+[33mPlease input your choice (0 - 10): 
+[0mYour choice is: 1
+[0m-----------------------------------------------------
+ID           Title           Price        Quantity 
+-----------------------------------------------------
+P06           Clips        2.300000              30
+P03          Phones       30.000000              20
+A01           Bikes       23.400000              20
+P02       Headphone       12.000000              32
+P04          Mouses       32.300000              10
+P01            Milk        1.300000              30
+P32           Cofee        0.400000              32
+-----------------------------------------------------
+[0mDo you want to continue using apps? (Y/N): 
+[33mChoose one of this options: 
+[33mProduct list: 
+-----------------------------------------------
+[0m1. Load data from file and display
+[0m2. Input & add to the end.
+[0m3. Display data
+[0m4. Save product list to file.
+[0m5. Search by ID
+[0m6. Delete by ID
+[0m7. Sort by ID.
+[0m8. Convert to Binary of the first item in LinkedList
+[0m9. Load to stack and display
+[0m10. Load to queue and display.
+[0mExit:
+0. Exit
+-----------------------------------------------
+[33mPlease input your choice (0 - 10): 
+[0mYour choice is: 2
+Please input new product's information: 
+Product code (no space in code): Product name: Product price: Product quantity: [0mDo you want to continue using apps? (Y/N): 
+[33mChoose one of this options: 
+[33mProduct list: 
+-----------------------------------------------
+[0m1. Load data from file and display
+[0m2. Input & add to the end.
+[0m3. Display data
+[0m4. Save product list to file.
+[0m5. Search by ID
+[0m6. Delete by ID
+[0m7. Sort by ID.
+[0m8. Convert to Binary of the first item in LinkedList
+[0m9. Load to stack and display
+[0m10. Load to queue and display.
+[0mExit:
+0. Exit
+-----------------------------------------------
+[33mPlease input your choice (0 - 10): 
+[0mYour choice is: 3
+[0m-----------------------------------------------------
+ID           Title           Price        Quantity 
+-----------------------------------------------------
+P06           Clips        2.300000              30
+P03          Phones       30.000000              20
+A01           Bikes       23.400000              20
+P02       Headphone       12.000000              32
+P04          Mouses       32.300000              10
+P01            Milk        1.300000              30
+P32           Cofee        0.400000              32
+P54          Breads        0.400000              94
+-----------------------------------------------------
+[0mDo you want to continue using apps? (Y/N): 
+[33mChoose one of this options: 
+[33mProduct list: 
+-----------------------------------------------
+[0m1. Load data from file and display
+[0m2. Input & add to the end.
+[0m3. Display data
+[0m4. Save product list to file.
+[0m5. Search by ID
+[0m6. Delete by ID
+[0m7. Sort by ID.
+[0m8. Convert to Binary of the first item in LinkedList
+[0m9. Load to stack and display
+[0m10. Load to queue and display.
+[0mExit:
+0. Exit
+-----------------------------------------------
+[33mPlease input your choice (0 - 10): 
+[0mYour choice is: 4
+[32mAbout to save...
+Saving... 
+Saving product: P06; Clips; 30; 2.3...
+Saving product: P03; Phones; 20; 30.0...
+Saving product: A01; Bikes; 20; 23.4...
+Saving product: P02; Headphone; 32; 12.0...
+Saving product: P04; Mouses; 10; 32.3...
+Saving product: P01; Milk; 30; 1.3...
+Saving product: P32; Cofee; 32; 0.4...
+Saving product: P54; Breads; 94; 0.4...
+File saved.
+[0mDo you want to continue using apps? (Y/N): 
+[33mChoose one of this options: 
+[33mProduct list: 
+-----------------------------------------------
+[0m1. Load data from file and display
+[0m2. Input & add to the end.
+[0m3. Display data
+[0m4. Save product list to file.
+[0m5. Search by ID
+[0m6. Delete by ID
+[0m7. Sort by ID.
+[0m8. Convert to Binary of the first item in LinkedList
+[0m9. Load to stack and display
+[0m10. Load to queue and display.
+[0mExit:
+0. Exit
+-----------------------------------------------
+[33mPlease input your choice (0 - 10): 
+[0mYour choice is: 5
+[33mPlease input an product ID to search: [0mNot found
+[0mDo you want to continue using apps? (Y/N): 
+[33mChoose one of this options: 
+[33mProduct list: 
+-----------------------------------------------
+[0m1. Load data from file and display
+[0m2. Input & add to the end.
+[0m3. Display data
+[0m4. Save product list to file.
+[0m5. Search by ID
+[0m6. Delete by ID
+[0m7. Sort by ID.
+[0m8. Convert to Binary of the first item in LinkedList
+[0m9. Load to stack and display
+[0m10. Load to queue and display.
+[0mExit:
+0. Exit
+-----------------------------------------------
+[33mPlease input your choice (0 - 10): 
+[0mYour choice is: 5
+[33mPlease input an product ID to search: [0mProduct found: 
+-----------------------------------------------------
+ID           Title           Price        Quantity 
+-----------------------------------------------------
+P01            Milk        1.300000              30
+-----------------------------------------------------
+[0mDo you want to continue using apps? (Y/N): 
+[33mChoose one of this options: 
+[33mProduct list: 
+-----------------------------------------------
+[0m1. Load data from file and display
+[0m2. Input & add to the end.
+[0m3. Display data
+[0m4. Save product list to file.
+[0m5. Search by ID
+[0m6. Delete by ID
+[0m7. Sort by ID.
+[0m8. Convert to Binary of the first item in LinkedList
+[0m9. Load to stack and display
+[0m10. Load to queue and display.
+[0mExit:
+0. Exit
+-----------------------------------------------
+[33mPlease input your choice (0 - 10): 
+[0mYour choice is: 7
+[32mSorting...
+[32mSorted list:
+[0m-----------------------------------------------------
+ID           Title           Price        Quantity 
+-----------------------------------------------------
+A01           Bikes       23.400000              20
+P01            Milk        1.300000              30
+P02       Headphone       12.000000              32
+P03          Phones       30.000000              20
+P04          Mouses       32.300000              10
+P06           Clips        2.300000              30
+P32           Cofee        0.400000              32
+P54          Breads        0.400000              94
+-----------------------------------------------------
+[0mDo you want to continue using apps? (Y/N): 
+[33mChoose one of this options: 
+[33mProduct list: 
+-----------------------------------------------
+[0m1. Load data from file and display
+[0m2. Input & add to the end.
+[0m3. Display data
+[0m4. Save product list to file.
+[0m5. Search by ID
+[0m6. Delete by ID
+[0m7. Sort by ID.
+[0m8. Convert to Binary of the first item in LinkedList
+[0m9. Load to stack and display
+[0m10. Load to queue and display.
+[0mExit:
+0. Exit
+-----------------------------------------------
+[33mPlease input your choice (0 - 10): 
+[0mYour choice is: 8
+[34mQuantity of first element product in list is 20 >> to Binary: 10100
+[0mDo you want to continue using apps? (Y/N): 
+[33mChoose one of this options: 
+[33mProduct list: 
+-----------------------------------------------
+[0m1. Load data from file and display
+[0m2. Input & add to the end.
+[0m3. Display data
+[0m4. Save product list to file.
+[0m5. Search by ID
+[0m6. Delete by ID
+[0m7. Sort by ID.
+[0m8. Convert to Binary of the first item in LinkedList
+[0m9. Load to stack and display
+[0m10. Load to queue and display.
+[0mExit:
+0. Exit
+-----------------------------------------------
+[33mPlease input your choice (0 - 10): 
+[0mYour choice is: 9
+Pushing items from linkedList to stack...
+Pushing Product A01...
+Pushing Product P01...
+Pushing Product P02...
+Pushing Product P03...
+Pushing Product P04...
+Pushing Product P06...
+Pushing Product P32...
+Pushing Product P54...
+Done pushing to stack.
+
+Display Stack:
+[0m-----------------------------------------------------
+ID           Title           Price        Quantity 
+-----------------------------------------------------
+P54          Breads        0.400000              94
+P32           Cofee        0.400000              32
+P06           Clips        2.300000              30
+P04          Mouses       32.300000              10
+P03          Phones       30.000000              20
+P02       Headphone       12.000000              32
+P01            Milk        1.300000              30
+A01           Bikes       23.400000              20
+-----------------------------------------------------
+[0mDo you want to continue using apps? (Y/N): 
+[33mChoose one of this options: 
+[33mProduct list: 
+-----------------------------------------------
+[0m1. Load data from file and display
+[0m2. Input & add to the end.
+[0m3. Display data
+[0m4. Save product list to file.
+[0m5. Search by ID
+[0m6. Delete by ID
+[0m7. Sort by ID.
+[0m8. Convert to Binary of the first item in LinkedList
+[0m9. Load to stack and display
+[0m10. Load to queue and display.
+[0mExit:
+0. Exit
+-----------------------------------------------
+[33mPlease input your choice (0 - 10): 
+[0mYour choice is: 10
+About to add products to queue...
+Adding P06 to queue...
+Adding P03 to queue...
+Adding A01 to queue...
+Adding P02 to queue...
+Adding P04 to queue...
+Adding P01 to queue...
+Adding P32 to queue...
+Adding P54 to queue...
+Enqueue done.
+
+Queue elements:
+[0m-----------------------------------------------------
+ID           Title           Price        Quantity 
+-----------------------------------------------------
+P06           Clips        2.300000              30
+P03          Phones       30.000000              20
+A01           Bikes       23.400000              20
+P02       Headphone       12.000000              32
+P04          Mouses       32.300000              10
+P01            Milk        1.300000              30
+P32           Cofee        0.400000              32
+P54          Breads        0.400000              94
+-----------------------------------------------------
+[0mDo you want to continue using apps? (Y/N): 

@@ -51,6 +51,8 @@ public class Product {
 
     @Override
     public String toString() {
-        return code + " | " + name + " | " + unitPrice + " | " + qty;
+        return String.format("%s %15s %15f %15d", code, name, unitPrice, qty);
+
+//        return code + " | " + name + " | " + unitPrice + " | " + qty;
     }
 }

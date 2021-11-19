@@ -2,6 +2,8 @@ package minhho.utils.queue;
 
 import minhho.models.Product;
 
+import static minhho.utils.ConsoleTextColor.ANSI_RESET;
+
 /**
  * Custom Queue for Product instances
  */
@@ -44,8 +46,12 @@ public class ProductQueue {
     }
 
     public void printQueue() {
+        System.out.println(ANSI_RESET + "-----------------------------------------------------");
+        System.out.printf("%s %15s %15s %15s %n", "ID", "Title", "Price", "Quantity");
+        System.out.println("-----------------------------------------------------");
         for (int i = 0; i < size; i++) {
             System.out.println(products[i]);
         }
+        System.out.println("-----------------------------------------------------");
     }
 }

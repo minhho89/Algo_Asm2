@@ -2,6 +2,8 @@ package minhho.utils.stack;
 
 import minhho.models.Product;
 
+import static minhho.utils.ConsoleTextColor.ANSI_RESET;
+
 public class ProductStack {
 
     static final int MAX = 1000;
@@ -47,9 +49,14 @@ public class ProductStack {
     }
 
     public void printStack() {
+        System.out.println(ANSI_RESET + "-----------------------------------------------------");
+        System.out.printf("%s %15s %15s %15s %n", "ID", "Title", "Price", "Quantity");
+        System.out.println("-----------------------------------------------------");
         for (int i = top; i > -1 ; i--) {
             System.out.println(products[i]);
         }
+        System.out.println("-----------------------------------------------------");
+
     }
 
 }

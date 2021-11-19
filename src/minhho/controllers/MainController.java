@@ -12,6 +12,7 @@ import minhho.views.MainMenu;
 import java.util.Scanner;
 
 import static java.lang.System.exit;
+import static minhho.utils.ConsoleTextColor.*;
 
 /**
  * Control the app's main flow. Including input to select features and call the right handle method.
@@ -24,10 +25,10 @@ public class MainController {
      * The entry point of the class, handle all app's operation
      */
     public static void run() {
-        System.out.println("App initializing...");
-        System.out.println("Adding data to list...");
+        System.out.println(ANSI_GREEN + "App initializing...");
+        System.out.println(ANSI_GREEN + "Adding data to list...");
         linkedList = loadDataToLinkedList();
-        System.out.println("Done initializing");
+        System.out.println(ANSI_GREEN + "Done initializing");
         System.out.println();
 
         while(true) {
@@ -41,7 +42,7 @@ public class MainController {
             toChoiceOption(choice);
 
             while (isContinue) {
-                System.out.print("Do you want to continue using apps? (Y/N): ");
+                System.out.print(ANSI_RESET + "Do you want to continue using apps? (Y/N): ");
                 Scanner sc = new Scanner(System.in);
                 String ans = sc.next();
 
@@ -55,6 +56,7 @@ public class MainController {
 
                 }
             }
+            System.out.println("");
         }
     }
 
@@ -176,7 +178,7 @@ public class MainController {
      */
     private static void convertToBinary() {
         int number = linkedList.getHead().getInfo().getQty();
-        System.out.println("Quantity of first element product in list is " + number +
+        System.out.println(ANSI_BLUE + "Quantity of first element product in list is " + number +
                 " >> to Binary: " + Utils.toBinary(number));
     }
 
@@ -184,9 +186,9 @@ public class MainController {
      * Sort the whole Linkedlist by products' id/code, then print to the console
      */
     private static void sortById() {
-        System.out.println("Sorting...");
+        System.out.println(ANSI_GREEN + "Sorting...");
         linkedList.sortById();
-        System.out.println("Sorted list:");
+        System.out.println(ANSI_GREEN + "Sorted list:");
         linkedList.printList();
 
     }
@@ -204,9 +206,9 @@ public class MainController {
         if (p == null) {
             System.out.println("Not found");
         } else {
-            System.out.println("Product found. About to delete... ");
+            System.out.println(ANSI_GREEN + "Product found. About to delete... ");
             linkedList.deleteProduct(key);
-            System.out.println("Product " + p.getCode() + " has been deleted.");
+            System.out.println(ANSI_CYAN + "Product " + p.getCode() + " has been deleted.");
         }
 
     }
@@ -217,15 +219,19 @@ public class MainController {
     private static void searchById() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Please input an product ID to search: ");
+        System.out.print(ANSI_YELLOW +  "Please input an product ID to search: ");
         String key = sc.nextLine();
 
         Product p = linkedList.linearSearch(key);
         if (p == null) {
-            System.out.println("Not found");
+            System.out.println(ANSI_RESET + "Not found");
         } else {
-            System.out.print("Product found: ");
+            System.out.println(ANSI_RESET + "Product found: ");
+            System.out.println("-----------------------------------------------------");
+            System.out.printf("%s %15s %15s %15s %n", "ID", "Title", "Price", "Quantity");
+            System.out.println("-----------------------------------------------------");
             System.out.println(p);
+            System.out.println("-----------------------------------------------------");
         }
 
     }

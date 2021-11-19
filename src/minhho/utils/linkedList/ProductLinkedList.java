@@ -4,6 +4,9 @@ import minhho.models.Product;
 import minhho.utils.simpleAlgos.ProductSearch;
 import minhho.utils.simpleAlgos.ProductSort;
 
+import static minhho.utils.ConsoleTextColor.ANSI_GREEN;
+import static minhho.utils.ConsoleTextColor.ANSI_RESET;
+
 /**
  * LinkedList that designed to hold Product instances
  */
@@ -81,6 +84,7 @@ public class ProductLinkedList {
         if (temp != null && temp.getInfo().getCode().equalsIgnoreCase(code)) {
             head = temp.next; // change head
             head.prev = null;
+            return;
         }
 
         // Else, search for the code to delete
@@ -148,9 +152,13 @@ public class ProductLinkedList {
      */
     public void printList() {
         Node<Product> currentNode = head;
+        System.out.println(ANSI_RESET + "-----------------------------------------------------");
+        System.out.printf("%s %15s %15s %15s %n", "ID", "Title", "Price", "Quantity");
+        System.out.println("-----------------------------------------------------");
         while (currentNode != null) {
             System.out.println(currentNode);
             currentNode = currentNode.next;
         }
+        System.out.println("-----------------------------------------------------");
     }
 }

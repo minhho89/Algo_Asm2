@@ -8,6 +8,8 @@ import minhho.utils.queue.ProductQueue;
 import java.io.*;
 import java.util.Scanner;
 
+import static minhho.utils.ConsoleTextColor.ANSI_GREEN;
+
 /**
  * Helps read and write to/from file
  * @param <T> Generics form for ProductLinkedList or ProductQueue
@@ -55,7 +57,7 @@ public class ProductIO<T> {
      * @param linkedList ProductLinkedList that holds products
      */
     public static void saveToFile(String file, String delimiter, ProductLinkedList linkedList) {
-        System.out.println("About to save...");
+        System.out.println(ANSI_GREEN + "About to save...");
         PrintWriter printWriter = null;
         int counter = 0;
 
