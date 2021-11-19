@@ -4,7 +4,6 @@ import minhho.models.Product;
 import minhho.utils.simpleAlgos.ProductSearch;
 import minhho.utils.simpleAlgos.ProductSort;
 
-import static minhho.utils.ConsoleTextColor.ANSI_GREEN;
 import static minhho.utils.ConsoleTextColor.ANSI_RESET;
 
 /**
@@ -22,6 +21,7 @@ public class ProductLinkedList {
 
     /**
      * Adding a node at the front of the list
+     *
      * @param product
      */
     public void push(Product product) {
@@ -42,6 +42,7 @@ public class ProductLinkedList {
 
     /**
      * Add a node at the back of the list
+     *
      * @param product
      */
     public void append(Product product) {
@@ -74,6 +75,7 @@ public class ProductLinkedList {
 
     /**
      * Delete a product by product code/id
+     *
      * @param code
      */
     public void deleteProduct(String code) {
@@ -105,6 +107,7 @@ public class ProductLinkedList {
 
     /**
      * Search a product by code using linear search algorithms
+     *
      * @param code
      * @return product if found, if not return null
      */
@@ -122,6 +125,7 @@ public class ProductLinkedList {
 
     /**
      * Search a node by a particular product
+     *
      * @param p product
      * @return product if found, if not return null
      */
@@ -141,7 +145,7 @@ public class ProductLinkedList {
      */
     public Node<Product> getLastNode() {
         Node<Product> node = head;
-        while(node.next != null) {
+        while (node.next != null) {
             node = node.next;
         }
         return node;
