@@ -30,7 +30,7 @@ public class ProductQueue {
 
     /**
      * Adding a new product to last position of queue
-     * @param product
+     * @param product Product to add to queue
      */
     public void enqueue(Product product) {
         if (isFull()) {
