@@ -50,7 +50,7 @@ public class MainController {
                     isContinue = false;
                 } else if (ans.equalsIgnoreCase("N") || ans.equalsIgnoreCase("No")) {
                     isContinue = false;
-                    exit(1);
+                    exit(0);
                 } else {
                     System.out.println("Invalid choice, please try again!");
 
@@ -97,7 +97,7 @@ public class MainController {
                 loadToQueueAndDisplay();
                 break;
             case 0:
-                exit(1);
+                exit(0);
             default:
                 System.out.println("again");
         }
