@@ -4,6 +4,9 @@ import minhho.models.Product;
 
 import static minhho.utils.ConsoleTextColor.ANSI_RESET;
 
+/**
+ * Handles Stack structure for Product
+ */
 public class ProductStack {
 
     static final int MAX = 1000;
@@ -18,6 +21,11 @@ public class ProductStack {
         top = -1; // make an empty stack
     }
 
+    /**
+     * Add a new product to stack
+     * @param p adding product
+     * @return  true if successful, otherwise return false
+     */
     public boolean push(Product p) {
         if (top >= MAX - 1) {
             System.out.println("Stack Overflow");
@@ -28,6 +36,10 @@ public class ProductStack {
         }
     }
 
+    /**
+     * Remove top element
+     * @return removed element
+     */
     public Product pop() {
         if (top < 0) {
             System.out.println("Stack is empty");
@@ -38,6 +50,10 @@ public class ProductStack {
         }
     }
 
+    /**
+     * Review top element
+     * @return  top element
+     */
     public Product peek() {
         if (top < 0) {
             System.out.println("Stack is empty");
